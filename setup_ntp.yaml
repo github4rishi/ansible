@@ -2,7 +2,7 @@
 - hosts: all
   remote_user: root
   tasks:
-  - name: Ensure the ntp package is installed 
+  - name: Ensure that ntp package is installed!
     yum:
       name: ntp
       state: present
