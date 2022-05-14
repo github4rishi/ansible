@@ -1,0 +1,14 @@
+---
+- name: Playbook can be used for OS patching
+  hosts:  all
+  become: yes
+  tasks:
+    - name: updating OS packages
+      yum:
+        name: '*'
+        state:  latest
+        update_only:  true
+    - name: validating patching status
+      debug:
+        msg:  Patching of {{ inventory_hostname }} is completed, now you can reboot
+...

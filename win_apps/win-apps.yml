@@ -1,0 +1,21 @@
+---
+- hosts:  all
+  gather_facts: no
+  tasks:
+  - name: Manage firefox
+    win_chocolatey:
+      name: firefox
+      state:  latest
+  - name: Manage process explorer
+    win_chocolatey:
+      name: procexp
+      state:  latest
+  - name: Manage GIT package
+    win_chocolatey:
+      name: git.install
+      state:  latest
+  - name: manage putty
+    win_chocolatey:
+      name: putty
+      state:  latest
+...

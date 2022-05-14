@@ -1,0 +1,23 @@
+---
+- name: manage windows updates
+  hosts:  win
+  tasks:
+    - name: windows_updates
+      win_updates:
+        log_path: c:\windows_update.txt
+        category_names:
+          - Application
+          - Connectors
+          - CriticalUpdates
+          - DefinitionUpdates
+          - DeveloperKits
+          - FeaturePacks
+          - Guidance
+          - SecurityUpdates
+          - ServicePacks
+          - Tools
+          - UpdateRollups
+          - Updates
+        reboot:	yes
+        state:	installed
+...
