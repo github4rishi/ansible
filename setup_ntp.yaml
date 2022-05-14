@@ -1,0 +1,13 @@
+---
+- hosts: all
+  remote_user: root
+  tasks:
+  - name: Ensure that ntp package is installed!
+    yum:
+      name: ntp
+      state: present
+  - name: Ensure the ntp service is enabled and running
+    service:
+     name: ntpd
+     state: started
+     enabled: True
