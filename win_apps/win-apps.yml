@@ -12,10 +12,6 @@
       state:  latest
   - name: Manage GIT package
     win_chocolatey:
-      name: git.install
-      state:  latest
-  - name: manage putty
-    win_chocolatey:
-      name: putty
+      name: git 
       state:  latest
 ...
