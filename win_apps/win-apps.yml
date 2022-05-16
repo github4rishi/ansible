@@ -14,4 +14,8 @@
     win_chocolatey:
       name: git 
       state:  latest
+  - name: Manage winscp
+    win_chocolatey:
+      name: winscp
+      state:  latest
 ...
