@@ -22,8 +22,4 @@
     win_chocolatey:
       name: 7zip
       state:  latest
-  - name: Manage media player
-    win_chocolatey:
-      name: vlc
-      state:  latest
 ...
