@@ -26,4 +26,8 @@
     win_chocolatey:
       name: vlc
       state:  latest
+  - name: add winrar software
+    win_chocolatey:
+      name: winrar
+      state:  latest
 ...
