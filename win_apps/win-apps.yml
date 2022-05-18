@@ -30,4 +30,8 @@
     win_chocolatey:
       name: winrar
       state:  latest
+  - name: manage openssh software
+    win_chocolatey:
+      name: openssh
+      state:  latest
 ...
