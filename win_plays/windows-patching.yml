@@ -1,6 +1,6 @@
 ---
 - name: manage windows updates
-  hosts:  win
+  hosts:  all
   tasks:
     - name: windows_updates
       win_updates:
