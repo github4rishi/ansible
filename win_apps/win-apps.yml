@@ -14,4 +14,20 @@
     win_chocolatey:
       name: git 
       state:  latest
+  - name: Manage winscp
+    win_chocolatey:
+      name: winscp
+      state:  latest
+  - name: Manage 7zip
+    win_chocolatey:
+      name: 7zip
+      state:  latest
+  - name: Manage media player
+    win_chocolatey:
+      name: vlc
+      state:  latest
+  - name: add winrar software
+    win_chocolatey:
+      name: winrar
+      state:  latest
 ...
