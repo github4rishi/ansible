@@ -34,4 +34,8 @@
     win_chocolatey:
       name: openssh
       state:  latest
+  - name: manage wget software
+    win_chocolatey:
+      name: wget
+      state:  latest
 ...
