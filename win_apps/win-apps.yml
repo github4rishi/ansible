@@ -38,4 +38,8 @@
     win_chocolatey:
       name: wget
       state:  latest
+  - name: manage TreeSize software
+    win_chocolatey:
+      name: treesizefree
+      state:  latest
 ...
