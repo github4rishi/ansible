@@ -1,49 +1,20 @@
 ---
-- hosts:  all
-  gather_facts: no
+- hosts:  win
+  gather_facts: yes
   tasks:
-  - name: Manage firefox
+  - name: install some basic windows tools
     win_chocolatey:
-      name: firefox
+      name: installing package {{ item }}
       state:  latest
-  - name: Manage process explorer
-    win_chocolatey:
-      name: procexp
-      state:  latest
-  - name: Manage GIT package
-    win_chocolatey:
-      name: git 
-      state:  latest
-  - name: Manage winscp
-    win_chocolatey:
-      name: winscp
-      state:  latest
-  - name: Manage 7zip
-    win_chocolatey:
-      name: 7zip
-      state:  latest
-  - name: Manage media player
-    win_chocolatey:
-      name: vlc
-      state:  latest
-  - name: add winrar software
-    win_chocolatey:
-      name: winrar
-      state:  latest
-  - name: manage openssh software
-    win_chocolatey:
-      name: openssh
-      state:  latest
-  - name: manage wget software
-    win_chocolatey:
-      name: wget
-      state:  latest
-  - name: manage TreeSize software
-    win_chocolatey:
-      name: treesizefree
-      state:  latest
-  - name: manage curl software
-    win_chocolatey:
-      name: curl
-      state:  latest
-...
+      with_items:
+        - firefox
+        - procexp
+        - git
+        - winscp
+        - 7zip
+        - vlc
+        - winrar
+        - openssh 
+        - wget
+        - treesizefree
+        - curl
