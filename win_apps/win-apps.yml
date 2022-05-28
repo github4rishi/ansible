@@ -4,18 +4,18 @@
   tasks:
   - name: install some basic windows tools
     win_chocolatey:
-      name: installing package {{ item }}
+      name: "{{ item }}"
       state:  latest
-      with_items:
-        - firefox
-        - procexp
-        - git
-        - winscp
-        - 7zip
-        - vlc
-        - winrar
-        - openssh 
-        - wget
-        - treesizefree
-        - curl
-        - skype
+    with_items:
+      - firefox
+      - procexp
+      - git
+      - winscp
+      - 7zip
+      - vlc
+      - winrar
+      - openssh 
+      - wget
+      - treesizefree
+      - curl
+      - skype
