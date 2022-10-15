@@ -1,5 +1,5 @@
 ---
-- name: Test connectivity between controller and target hosts.
+- name: Test connectivity b/w controller and target hosts.
   hosts:  all
   tasks:
     - name: Ping test
