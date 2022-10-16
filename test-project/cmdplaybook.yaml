@@ -4,3 +4,6 @@
   tasks:
     - name: Execute command date
       command:  date
+
+    - name: Display contents of resolv.conf
+      command: cat resolv.conf chdir=/etc
