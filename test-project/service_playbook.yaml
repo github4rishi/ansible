@@ -1,0 +1,8 @@
+---
+- name: understand service module
+  hosts:  target1
+  tasks:
+    - name: start apache service
+      service:
+        name: httpd
+        state:  started
