@@ -2,7 +2,7 @@
 - name: understand service module
   hosts:  target1
   tasks:
-    - name: start apache service
+    - name: start vsftpd service
       service:
-        name: httpd
+        name: vsftpd
         state:  started
