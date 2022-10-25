@@ -1,6 +1,0 @@
----
-- name: understand script module
-  hosts:  all
-  tasks:
-    - name: script sample 
-      script: /home/osboxes/sample_script.sh
