@@ -1,8 +1,0 @@
----
-- name: understand service module
-  hosts:  target1
-  tasks:
-    - name: start vsftpd service
-      service:
-        name: vsftpd
-        state:  started
