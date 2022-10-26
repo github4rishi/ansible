@@ -1,5 +1,5 @@
 ---
-- name: linux patching
+- name: patch linux nodes
   hosts:  all
   become: yes
   tasks:
@@ -10,7 +10,7 @@
         warn: false
       register: updates
 
-    - name: display count 
+    - name: display patches count 
       debug:
         msg: 
         - "Found {{ updates.stdout_lines | length }} packages to be updated"
