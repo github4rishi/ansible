@@ -1,0 +1,10 @@
+---
+- hosts:  win
+  gather_facts: yes
+  tasks:
+  - name: remove win packages
+    win_chocolatey:
+      name: "{{ item }}"
+      state:  absent
+    with_items:
+      - firefox
