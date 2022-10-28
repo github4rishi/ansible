@@ -8,8 +8,3 @@
       state:  latest
     with_items:
       - firefox
-      - procexp
-      - git
-      - winscp
-      - winrar
-      - vlc      
