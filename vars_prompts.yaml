@@ -1,0 +1,11 @@
+---
+- name: create user using vars_prompt
+  hosts: ansible1
+  vars_prompt:
+  - name: user
+    prompt: enter user name
+    private: no
+  tasks:
+  - name: create user
+    user:
+      name: "{{ user }}"

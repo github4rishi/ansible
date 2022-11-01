@@ -1,0 +1,8 @@
+---
+- name: learn to use set_fact variable
+  hosts: localhost
+  tasks:
+  - set_fact: 
+      tag: web
+  - debug:
+      msg: the value of tag is {{ tag }}

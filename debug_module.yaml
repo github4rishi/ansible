@@ -1,0 +1,7 @@
+---
+- name: understand debug module
+  hosts: localhost
+  tasks:
+  - name: learn debug module
+    debug:
+      msg: hey! learning debug module
