@@ -1,0 +1,13 @@
+---
+- name: create users with var_files
+  hosts: ansible1
+  vars_files: varsfile_file.yaml
+  tasks:
+  - name: create users {{ username }}
+    user:
+      name: "{{ username }}"
+      state: present
+      generate_ssh_key: yes
+      groups: wheel
+
+

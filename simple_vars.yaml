@@ -1,0 +1,12 @@
+---
+- name: create user using vars
+  hosts: ansible1
+  vars: 
+    username: rishikap
+  tasks:
+    - name: create user {{ username }}
+      user:
+        name: "{{ username }}"
+        state: present
+        generate_ssh_key: yes
+        groups: wheel
