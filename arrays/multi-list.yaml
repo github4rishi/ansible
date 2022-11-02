@@ -1,0 +1,14 @@
+---
+- name: show list also known as arrays
+  hosts: ansible1.example.com
+  vars_files:
+    - vars/users-list.yaml
+  tasks:
+    - name: print array values
+      debug:
+        msg: "Users {{item.username }} has homedirectory {{ item.homedir }} and shell {{ item.shell }}"
+      loop: "{{ users }}"
+
+    - name: print the second array value 
+      debug:
+        msg: the second item is {{ users[1] }}

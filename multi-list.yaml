@@ -1,0 +1,4 @@
+---
+- name: show list also knows as arrays
+  hosts: ansible1
+
