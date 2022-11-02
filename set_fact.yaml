@@ -1,8 +1,12 @@
 ---
 - name: learn to use set_fact variable
-  hosts: localhost
+  hosts: rocky
   tasks:
   - set_fact: 
-      tag: web
+      package: vsftpd
   - debug:
-      msg: the value of tag is {{ tag }}
+      msg: the value of package is {{ package }}
+  - name: install package
+    package:
+      name: "{{ package }}"
+      state: latest
