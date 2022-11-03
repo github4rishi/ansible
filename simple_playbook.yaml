@@ -1,0 +1,7 @@
+---
+- name: lab activity
+  hosts: webservers
+  tasks:
+  - name: print variables
+    debug:
+      msg: "using {{ web_package }} and {{ web_service }}"

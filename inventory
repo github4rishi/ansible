@@ -6,3 +6,10 @@ ansible1
 ansible2
 tower
 
+[webservers]
+ansible1
+ansible2
+
+
+[dbservers]
+centos
