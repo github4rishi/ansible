@@ -1,0 +1,19 @@
+---
+- name: understand handlers
+  hosts: all
+  tasks:
+  - name: install web services
+    package:
+      name: httpd
+      state: latest
+  - name: copy web content
+    copy:
+      src: /tmp/index.html
+      dest: /var/www/html/index.html
+    notify:
+      - restart_web
+  handlers:
+    - name: restart_web
+      service:
+        name: httpd
+        state: restarted

@@ -1,0 +1,15 @@
+---
+- name: uninstall web services
+  hosts: webservers
+  force_handlers: yes
+  tasks:
+  - name: remove web package 
+    package:
+      name: httpd
+      state: absent
+    notify: 
+      del_index
+
+  handlers:
+  - name: del_index
+    command: rm /var/www/html/index.html

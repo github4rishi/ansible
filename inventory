@@ -9,7 +9,7 @@ tower
 [webservers]
 ansible1
 ansible2
-
+centos
 
 [dbservers]
 centos
