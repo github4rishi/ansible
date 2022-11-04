@@ -1,0 +1,16 @@
+---
+- name: remove ftp
+  hosts: ftpservers
+  tasks:
+  - name: remove ftp package
+    package:
+      name: vsftpd
+      state: absent
+    notify:
+      del_ftpindex
+
+  handlers:
+    - name: del_ftpindex
+      file:
+        path: /var/ftp/pub/index.html
+        state: absent

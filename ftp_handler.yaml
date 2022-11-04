@@ -1,0 +1,21 @@
+---
+- name: ftp install 
+  hosts: ftpservers
+  tasks:
+  - name: install vsftp
+    package:
+      name: vsftpd
+      state: latest
+  - name: content in ftp
+    copy:
+      src: /tmp/dummy_file.txt
+      dest: /var/ftp/pub/
+    notify:
+      restart_ftp
+
+  handlers:
+  - name: restart_ftp
+    service:
+      name: vsftpd
+      state: restarted
+

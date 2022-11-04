@@ -1,5 +1,6 @@
 centos
 ubuntu
+tower
 
 [rocky]
 ansible1
@@ -12,4 +13,9 @@ ansible2
 centos
 
 [dbservers]
+centos
+
+[ftpservers]
+ansible1
+ansible2
 centos
