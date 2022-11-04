@@ -1,6 +1,6 @@
 ---
 - name: ftp install 
-  hosts: ftpservers
+  hosts: all
   tasks:
   - name: install vsftp
     package:
