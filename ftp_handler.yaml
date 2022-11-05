@@ -6,6 +6,11 @@
     package:
       name: vsftpd
       state: latest
+  - name: start and enable service
+    service:
+      name: vsftpd
+      state: started
+      enabled: yes
   - name: content in ftp
     copy:
       src: /tmp/dummy_file.txt
