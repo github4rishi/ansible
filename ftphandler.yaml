@@ -1,0 +1,22 @@
+---
+- name: handler usage with ftp
+  hosts: rocky
+  vars:
+    ftp_package: vsftpd
+  tasks:
+  - name: install ftp 
+    package:
+      name: "{{ ftp_package }}"
+      state: latest
+  - name: copy content
+    copy:
+      src: /tmp/dummy_file.txt
+      dest: /var/ftp/pub/
+    notify:
+      ftp_reload
+
+  handlers:
+  - name: ftp_reload
+    service:
+      name: "{{ ftp_package }}"
+      state: restarted

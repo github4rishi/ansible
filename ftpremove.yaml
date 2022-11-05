@@ -1,6 +1,6 @@
 ---
 - name: remove ftp
-  hosts: ftpservers
+  hosts: rocky 
   tasks:
   - name: remove ftp package
     package:
@@ -12,5 +12,5 @@
   handlers:
     - name: del_ftpindex
       file:
-        path: /var/ftp/pub/index.html
+        path: /var/ftp/pub/dummy_file.txt
         state: absent

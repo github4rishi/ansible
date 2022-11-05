@@ -1,0 +1,14 @@
+---
+- name: public key deploy to managed host 
+  hosts: all
+  tasks:
+  - name: Ensure key is in ansible's .ssh/authorized_key
+    authorized_key:
+      user: ansible
+      state: present
+      key: '{{ item }}'
+    with_file:
+      - ~/.ssh/id_rsa.pub
+  - debug:
+      msg: "SSH password-less auth has been established successfully"
+        
