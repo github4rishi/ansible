@@ -2,7 +2,7 @@
 - name: public key deploy to managed host 
   hosts: all
   tasks:
-  - name: Ensure key is in ansible's .ssh/authorized_key
+  - name: Ensure key is remote_user's .ssh/authorized_key 
     authorized_key:
       user: ansible
       state: present
