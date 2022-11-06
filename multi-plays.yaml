@@ -1,0 +1,13 @@
+---
+- name: first playbook 
+  hosts: rocky
+  tasks:
+  - name: display hostname
+    command: hostname
+
+- name: second playbook
+  hosts: centos
+  tasks:
+  - name: display hostname
+    command: hostname
+...

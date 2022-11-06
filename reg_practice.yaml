@@ -1,0 +1,12 @@
+---
+- name: register understand
+  hosts: localhost
+  tasks:
+  - name: hostname print
+    command: hostname
+    register: command_out
+  - debug:
+      var: command_out
+  - debug:
+      msg: the stdout is {{ command_out['stdout'] }}
+...
