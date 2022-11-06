@@ -1,0 +1,9 @@
+---
+- name: sync data of from control machine to remote hosts
+  hosts: all
+  tasks:
+  - name: sync data
+    synchronize:
+      src: /var/tmp/foo
+      dest: /var/tmp/
+...

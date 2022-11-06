@@ -1,0 +1,6 @@
+---
+- name: reboot all rocky machines
+  hosts: rocky
+  tasks:
+  - name: reboot machines 
+    reboot:
