@@ -1,0 +1,20 @@
+---
+- name: insert date when the system came to production
+  hosts: rocky
+  tasks:
+  - name: current date
+    command: date 
+    register: date_out
+  - debug:
+      msg: the current date is {{ date_out['stdout_lines'] }}
+ 
+  - name: create file and insert date
+    lineinfile:
+      path: /root/when_in_prod
+      line: "{{ date_out['stdout_lines'] }}"
+      create: yes
+
+  - name: attributes to a file
+    file:
+      path: /root/when_in_prod
+      attr: +i
