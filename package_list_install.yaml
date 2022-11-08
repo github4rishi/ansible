@@ -8,5 +8,7 @@
       - httpd
       - nmap
       - firefox
+      - banner
+      - epel-relase
      state: latest
 ...
