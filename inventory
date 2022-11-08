@@ -1,8 +1,7 @@
-[ubuntuLinux]
 centos
 ubuntu
+tower
 
 [rocky]
 ansible1
 ansible2
-tower
