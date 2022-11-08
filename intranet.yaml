@@ -8,15 +8,18 @@
         - httpd
         - firewalld
       state: latest
+
   - name: test html page is installed
     copy:
       content: "Welcome to the example.com intranet!\n"
       dest: /var/www/html/index.html
+
   - name: firewalld enabled and running
     service:
       name: firewalld
       state: started
       enabled: true
+
   - name: firewalld permits access to httpd service
     firewalld:
       service: http
