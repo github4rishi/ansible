@@ -1,0 +1,9 @@
+---
+- name: define variable using external file
+  hosts: localhost
+  vars_files:
+    - vars/name.yaml
+  tasks:
+  - name: display vars
+    debug:
+      msg: my first name is {{ firstname }} and last name is {{ lastname }}

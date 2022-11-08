@@ -1,0 +1,12 @@
+---
+- name: install standard packages
+  hosts: rocky
+  tasks:
+  - name: install set of packages
+    package:
+     name:
+      - httpd
+      - nmap
+      - firefox
+     state: latest
+...

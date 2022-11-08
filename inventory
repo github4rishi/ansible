@@ -1,3 +1,4 @@
+[ubuntuLinux]
 centos
 ubuntu
 
@@ -5,4 +6,3 @@ ubuntu
 ansible1
 ansible2
 tower
-

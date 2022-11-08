@@ -1,0 +1,14 @@
+---
+- name: group_vars and host_vars 
+  hosts: rocky
+  tasks:
+  - name: package in rocky host group
+    debug:
+      msg: "{{ package }}"
+
+- name: package in ubuntu
+  hosts: ubuntu
+  tasks:
+  - name: packae in ubuntu host group
+    debug:
+      msg: "{{ package }}"

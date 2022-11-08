@@ -1,0 +1,10 @@
+---
+- name: simple vars usage
+  hosts:  localhost
+  vars:
+    firstname: Rishi
+    lastname: kapoor
+  tasks:
+  - name: print variables value
+    debug:
+      msg: My first name is {{ firstname }} and last name is {{ lastname }}
