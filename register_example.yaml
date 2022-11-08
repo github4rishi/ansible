@@ -1,0 +1,11 @@
+---
+- name: install a package and print the result
+  hosts: rocky
+  tasks:
+  - name: install the package 
+    package:
+      name: httpd
+      state: installed
+    register: install_result
+
+  - debug: var=install_result['rc']
