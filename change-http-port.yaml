@@ -1,0 +1,30 @@
+---
+- name: change http default port to 8080
+  hosts: rocky
+  tasks:
+  - name: install httpd 
+    package:
+      name: httpd
+      state: latest
+
+  - name: start and enable httpd service
+    service:
+      name: httpd
+      state: started
+      enabled: true
+
+  - name: change http port
+    lineinfile:
+      path: /etc/httpd/conf/httpd.conf 
+      regexp: '^Listen'
+      insertafter: '^#Listen'
+      line: Listen 8080
+      backup: yes
+    notify:
+      restart_apache
+
+  handlers:
+  - name: restart_apache
+    service:
+      name: httpd
+      state: restarted
