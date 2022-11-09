@@ -1,10 +1,10 @@
 ---
-- name: Enable intranet services 
+- name: Enable intranet services
   hosts: rocky
   tasks:
   - name: latest version of httpd and firewalld installed
     yum:
-      name: 
+      name:
         - httpd
         - firewalld
       state: latest
@@ -25,21 +25,19 @@
       service: http
       permanent: true
       state: enabled
-      immediate: yes
-
+      immediate: true
 # 2nd play
 - name: Test intranet web server
-  hosts: localhost 
-  become: no
+  hosts: localhost
+  become: false
   tasks:
-  - name: connect to intranet web server - ansible1
+  - name: connect to intranet web server ansible1
     uri:
       url: http://ansible1.example.com
-      return_content: yes
+      return_content: true
       status_code: 200
   - name: connect to intranet web server - ansible2
     uri:
       url: http://ansible2.example.com
-      return_content: yes
+      return_content: true
       status_code: 200
-

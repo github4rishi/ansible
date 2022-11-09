@@ -1,0 +1,19 @@
+---
+- name: deny user for ssh login
+  hosts: all
+  tasks:
+  - name: deny user for ssh login
+    lineinfile:
+      path: /etc/ssh/sshd_config
+      line: "DenyUsers rishikap"
+      backup: true
+      state: absent
+    notify:
+      restart-ssh
+ 
+  handlers:
+  - name: restart-ssh
+    service:
+      name: sshd
+      state: restarted
+...
