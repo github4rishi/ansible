@@ -1,0 +1,11 @@
+---
+- name: change sshd log-level
+  hosts: rocky
+  tasks:
+  - name: change sshd log-level to debug
+    lineinfile:
+      path: /etc/ssh/sshd_config
+      insertafter: '^#LogLevel'
+      line: LogLevel DEBUG
+      backup: true
+...

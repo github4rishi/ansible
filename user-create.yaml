@@ -1,0 +1,11 @@
+---
+- name: create user
+  hosts: ansible1
+  gather_facts: no
+  vars_files:
+    vars/secretfile.yaml
+  tasks:
+  - name: create user using vault
+    user: 
+      name: "{{ username }}"
+      password: "{{ pwhash }}"

@@ -1,0 +1,10 @@
+---
+- name: install list of packages 
+  hosts: rocky
+  vars:
+    package: banner
+  tasks:
+  - name: install {{ package }}
+    package:  
+      name: "{{ package }}"
+      state: latest

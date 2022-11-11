@@ -1,0 +1,13 @@
+---
+- name: display facts 
+  hosts: ansible1
+  tasks:
+  - name: display specfic facts
+    debug:
+       msg: > 
+           short hostname is {{ ansible_facts['hostname'] }} 
+           fqdn is {{ ansible_facts['fqdn'] }}
+           default ipv4 address is {{ ansible_facts['default_ipv4']['address'] }}
+           display dns servers {{ ansible_facts['dns']['nameservers'] }}
+           kernel version {{ ansible_facts['kernel'] }}
+           interfaces {{ ansible_facts['interfaces'] }}

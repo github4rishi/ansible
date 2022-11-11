@@ -11,10 +11,12 @@
     copy:
       src: index.html
       dest: /var/www/html/index.html
+    notify:
+      restart-http
 
-  - name: httpd start
-    service:
-      name: httpd
-      state: started
-      enabled: true
-...
+  handlers:
+    - name: restart-http
+      service:
+        name: httpd
+        state: restarted
+        enabled: true

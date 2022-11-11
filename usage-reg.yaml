@@ -1,0 +1,11 @@
+---
+- name: understand usage of registers
+  hosts: localhost
+  tasks:
+  - name: registers work
+    command: cat /etc/passwd
+    register: command_out
+
+  - debug:
+      var: command_out['stdout_lines']
+
