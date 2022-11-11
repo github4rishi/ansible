@@ -1,0 +1,7 @@
+---
+- name: display managed hosts network
+  hosts: rocky
+  tasks:
+  - name: display network details 
+    debug:
+      msg: The short hostname is {{ ansible_facts['hostname'] }} and {{ ansible_facts['default_ipv4']['address'] }}
