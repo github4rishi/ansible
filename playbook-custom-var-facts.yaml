@@ -1,5 +1,5 @@
 ---
-- name: depfiles/htpasswdloy web server
+- name: deploy web server 
   hosts: rocky
   vars:
     firewall_pkg: firewalld
