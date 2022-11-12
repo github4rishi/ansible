@@ -1,0 +1,96 @@
+---
+- name: depfiles/htpasswdloy web server
+  hosts: rocky
+  vars:
+    firewall_pkg: firewalld
+    firewall_svc: firewalld
+    web_pkg: httpd
+    web_svc: httpd
+    ssl_pkg: mod_ssl
+    httpdconf_src: files/httpd.conf
+    httpdconf_dest: /etc/httpd/conf/httpd.conf
+    htaccess_src: files/.htaccess 
+    secret_dir: /etc/httpd/secrets
+    secret_src: files/htpasswd
+    secret_dest: "{{ secret_dir }}/htpasswd"
+    web_root: /var/www/html
+  tasks:
+  - name: install packages
+    package:
+      name: 
+        - "{{ firewall_pkg }}"
+        - "{{ web_pkg }}"
+        - "{{ ssl_pkg }}"
+      state: latest
+  - name: copy httpd config file 
+    copy:
+      src: "{{ httpdconf_src }}"
+      dest: "{{ httpdconf_dest }}"
+      owner: root
+      group: root
+      mode: '0644'
+  - name: secrets directory exists
+    file:
+      path: "{{ secret_dir }}" 
+      state: directory 
+      owner: apache
+      group: apache
+      mode: 0500
+  - name: htpasswd file exists
+    copy:
+      src: files/htpasswd
+      dest: "{{ secret_dest }}"
+      owner: apache
+      group: apache 
+      mode: 0400
+  - name: .htaccess file installed in docroot
+    copy:
+      src: "{{ htaccess_src }}"
+      dest: "{{ web_root }}/.htaccess"
+      owner: apache
+      group: apache 
+      mode: 0400
+  - name: create index.html
+    copy:
+      content: "{{ ansible_facts['fqdn'] }} ({{ ansible_facts['default_ipv4']['address']}}) has been customized by Ansible.\n" 
+      dest: "{{ web_root }}/index.html"
+  - name: firewall service enabled and started
+    service:
+      name: "{{ firewall_svc }}"
+      state: started
+      enabled: true 
+  - name: open the port for the web server
+    firewalld:
+      service: https
+      state: enabled 
+      immediate: true
+      permanent: true 
+  - name: web service enabled and started
+    service:
+      name: "{{ web_svc }}"
+      state: started
+      enabled: true
+
+# second play
+- name: test web service with basic auth
+  hosts: localhost
+  become: no
+  vars:
+    web_user: guest 
+  vars_files:
+    - vars/secret.yaml
+  tasks:
+  - name: connect to web server with basic auth
+    uri:
+      url: http://ansible1.example.com
+      validate_certs: no
+      force_basic_auth: yes
+      user: "{{ web_user }}"
+      password: "{{ web_pass }}"
+      return_content: yes 
+      status_code: 200
+    register: auth_test 
+
+  - debug:
+     var: auth_test.content
+...
