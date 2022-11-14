@@ -1,0 +1,8 @@
+---
+- name: display facts
+  hosts: ansible1
+  tasks:
+  - name: display facts 
+    debug:
+      msg: The hostname is {{ ansible_facts['default_ipv4']['address'] }} and hostname is {{ ansible_facts['fqdn'] }}
+...

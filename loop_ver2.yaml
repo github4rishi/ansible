@@ -1,0 +1,14 @@
+---
+- name: users exists and are in the correct groups
+  hosts: rocky
+  tasks:
+  - name: users and groups
+    user:
+      name: "{{ item.name }}"
+      state: present
+      groups: "{{ item.groups }}"
+    loop:
+      - name: jane
+        groups: wheel
+      - name: joe
+        groups: root
