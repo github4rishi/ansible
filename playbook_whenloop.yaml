@@ -1,0 +1,20 @@
+---
+- name: MariaDB server is running
+  hosts: rocky
+  vars:
+    mariadb_packages:
+      - mariadb-server
+      - python3-PyMySQL
+  tasks:
+  - name: config mariadb
+    package:
+      name: "{{ item }}"
+      state: present
+    loop: "{{ mariadb_packages }}"
+    when: ansible_facts['distribution'] == "Rocky"
+
+  - name: Start MariaDB service
+    service:
+      name: mariadb
+      state: started
+      enabled: true
