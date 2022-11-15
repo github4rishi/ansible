@@ -1,0 +1,14 @@
+---
+- name: Loop Register Test
+  gather_facts: no
+  hosts: localhost
+  tasks:
+  - name: Looping echo task
+    shell: "echo this is my item: {{ item }}"
+    loop:
+      - one
+      - two
+    register: echo_result
+  - name: show echo_results variable
+    debug:
+      var: echo_result
