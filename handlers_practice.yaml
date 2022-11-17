@@ -1,0 +1,36 @@
+---
+- name: very secure ftp configuration
+  hosts: rocky
+  tasks:
+  - name: install vsftpd
+    package:
+      name: vsftpd
+      state: latest
+
+  - name: start and enable vsftpd
+    service:
+      name: vsftpd
+      state: started
+      enabled: yes
+
+  - name: create log file 
+    file:
+      path: /var/log/vsftpd.log
+      state: touch
+      mode: u=rw,g=r,o=r
+
+  - name: configure vsftpd
+    lineinfile:
+      path: /etc/vsftpd/vsftpd.conf
+      regexp: '^#xferlog_file='
+      line: xferlog_file=/var/log/vsftpd.log
+      backup: yes
+    notify:
+      - restart-vsftpd
+
+  handlers:
+  - name: restart-vsftpd
+    service:
+      name: vsftpd
+      state: restarted
+...

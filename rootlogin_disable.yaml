@@ -5,11 +5,11 @@
   - name: direct root login disable
     lineinfile:
       path: /etc/ssh/sshd_config
-      regex: '^#*PermitRootLogin'
+      regexp: '^#*PermitRootLogin'
       line: 'PermitRootLogin no'
       backup: yes
     notify:
-      restart_ssh
+      - restart_ssh
   handlers:
   - name: restart_ssh
     service:
