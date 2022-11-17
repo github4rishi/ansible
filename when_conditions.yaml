@@ -1,0 +1,11 @@
+---
+- name: understand when condition
+  hosts: localhost
+  vars:
+    run_my_task: false
+  tasks:
+  - name: run the task when condition is true
+    debug:
+      msg: task passed to run
+    when: run_my_task 
+... 
