@@ -1,0 +1,20 @@
+---
+- name: install web packages on redhat distro
+  hosts: redhatdistro
+  tasks:
+  - name: install apache package(redhat distro)
+    package:
+      name: httpd
+      state: latest
+    when: >
+      ( ansible_facts['distribution'] == "Rocky" or ansible_facts['distribution'] == "CentOS" )
+
+- name: install apache package on ubuntu distro
+  hosts: ubuntu
+  tasks:
+  - name: install apache package(ubuntu distro)
+    package:
+      name: apache2
+      state: latest
+    when: ansible_facts['distribution'] == "Ubuntu"
+... 

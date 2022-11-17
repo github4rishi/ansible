@@ -5,3 +5,8 @@ tower
 [rocky]
 ansible1
 ansible2
+
+[redhatdistro]
+ansible1
+ansible2
+centos
