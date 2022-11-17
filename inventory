@@ -6,7 +6,8 @@ tower
 ansible1
 ansible2
 
-[redhatdistro]
+[linux]
 ansible1
 ansible2
 centos
+ubuntu
