@@ -1,0 +1,29 @@
+---
+- name: config ssh and apache 
+  hosts: rocky
+  tasks: 
+  - name: config ssh
+    lineinfile:
+      path: /etc/ssh/sshd_config
+      regex: '^#*PermitRootLogin'
+      line: 'PermitRootLogin no'
+      backup: yes
+    notify:
+      - restart-sshd
+  - name: config httpd
+    copy:
+      src:  /tmp/index.html
+      dest: /var/www/html/index.html
+      force: yes
+    notify:
+      - restart-httpd
+  handlers:
+    - name: restart-sshd
+      service:
+        name: sshd
+        state: restarted
+    - name: restart-httpd
+      service:
+        name: httpd
+        state: restarted
+...

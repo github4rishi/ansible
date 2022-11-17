@@ -1,0 +1,11 @@
+---
+- name: install standard packages
+  hosts: ubuntu
+  tasks:
+  - name: install few standard packages 
+    package:
+      name: "{{ item }}"
+      state: latest
+    loop:
+      - nginx
+      - gcc
