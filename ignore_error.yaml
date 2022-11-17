@@ -1,0 +1,12 @@
+---
+- name: Latest version of notapkg is installed 
+  hosts: rocky
+  tasks:
+  - name: install notapkg package
+    yum:
+     name: notapkg
+     state: latest
+    ignore_errors: yes
+  - debug:
+      msg: after the task 
+...
