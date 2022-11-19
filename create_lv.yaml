@@ -1,0 +1,15 @@
+---
+- name: create logical volume
+  hosts: ubuntu
+  tasks:
+  - name: create a test LV
+    lvol:
+      lv: test
+      vg: vgubuntu
+      size: 7M
+    register: command_result
+
+  - name: show command result
+    debug:
+      var: command_result
+...
