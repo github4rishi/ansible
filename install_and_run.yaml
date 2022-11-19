@@ -1,0 +1,20 @@
+---
+- name: install packages
+  hosts: ansible1
+  tasks:
+  - name: install all standard packages
+    package:
+      name:
+        - vsftpd
+        - httpd
+        - nmap
+      state: latest      
+ 
+  - name: start the services
+    service:
+      name: "{{ item }}"
+      state: started
+    loop: 
+      - vsftpd 
+      - httpd
+...

@@ -1,0 +1,25 @@
+---
+- name: install and configure web
+  hosts: rocky
+  vars:
+    apache_package: httpd 
+  tasks:
+  - name: install and configure web services 
+    block:
+      - name: install web package {{ apache_package }}
+        yum:
+          name: "{{ apache_package }}"
+          state: latest
+      - name: configure index.html
+        copy:
+          src: /tmp/index.html
+          dest: /var/www/html/index.html
+      - name: restart httpd 
+        service:
+         name: "{{ apache_package }}"
+         state: started
+      - name: check connectivity
+        uri:
+          url: http://ansible1
+    when: ansible_facts['distribution'] == 'Rocky'
+... 

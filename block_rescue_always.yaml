@@ -1,0 +1,19 @@
+---
+- name: using blocks
+  hosts: ansible1
+  tasks:
+  - name: intended to be successful
+    block:
+      - name: remove a file 
+        command:
+          cmd: /usr/bin/rm /var/tmp/foo.txt
+    rescue:
+      - name: create a file 
+        file:
+          path: /tmp/rescuefiles
+          state: touch
+    always:
+      - name: always write a message to logs
+        command:
+          cmd: /usr/bin/logger hello
+           

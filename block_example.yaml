@@ -1,0 +1,17 @@
+---
+- name: block example
+  hosts: rocky
+  tasks:
+  - name: install and config yum versionlock plugin
+    block:
+    - name: package needed by yum
+      yum:
+        name: yum-plugin-versionlock
+        state: present
+    - name: lock version of tzdata
+      lineinfile:
+        dest: /etc/yum/pluginconf.d/versionlock.list
+        line: tzdata-2016j-1
+        state: present 
+    when: ansible_facts['distribution'] == "Rocky"
+...

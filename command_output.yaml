@@ -1,0 +1,15 @@
+---
+- name: test command output
+  hosts: ubuntu
+  tasks:
+  - name: test for VG existence
+    command: vgs vgubuntu
+    register: vgout
+    ignore_errors: True
+  - name: show variable value 
+    debug:
+      var: vgout
+  - name: print message
+    debug:
+      msg: vg does exist
+    when: "'vgubuntu' in vgout.stdout"
