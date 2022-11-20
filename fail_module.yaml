@@ -12,7 +12,7 @@
   - name: show command_result errors
     debug:
       var: command_result.err
-  - name: print nice error message after failure
+  - name: print nice error message after failure 
     fail:
       msg: volume group doesn't exist
     when: "'not found' in command_result.err"

@@ -1,19 +1,20 @@
 ---
-- name: using blocks
+- name: understand block, rescue and always
   hosts: ansible1
   tasks:
-  - name: intended to be successful
+  - name: manage httpd
     block:
-      - name: remove a file 
-        command:
-          cmd: /usr/bin/rm /var/tmp/foo.txt
+      - name: copy index.html
+        copy:
+          src: /tmp/index.html
+          dest: /var/www/html/index.html
     rescue:
-      - name: create a file 
-        file:
-          path: /tmp/rescuefiles
-          state: touch
+      - name: install httpd
+        package:
+          name: httpd
+          state: installed
     always:
-      - name: always write a message to logs
-        command:
-          cmd: /usr/bin/logger hello
-           
+      - name: ensure httpd is started
+        service:
+          name: httpd
+          state: restarted

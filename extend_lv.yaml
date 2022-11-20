@@ -1,0 +1,9 @@
+---
+- name: extend lv
+  hosts: ubuntu
+  tasks:
+  - name: extend lv
+    lvol:
+      vg: vgubuntu
+      lv: test
+      size: +2M

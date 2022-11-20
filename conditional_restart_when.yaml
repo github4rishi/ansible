@@ -1,0 +1,19 @@
+---
+- name: restart httpd if postfix is running
+  hosts: ansible1
+  tasks:
+  - name: Get postfix server status
+    command: /usr/bin/systemctl is-active postfix
+    ignore_errors: yes
+    register: result
+
+
+  - name: print result value
+    debug:
+      var: result
+
+  - name: restart apache httpd based on postfix service status
+    service:
+      name: httpd
+      state: restarted
+    when: result.rc == 0 

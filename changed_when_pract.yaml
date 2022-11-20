@@ -1,0 +1,16 @@
+---
+- name: practise of changed when
+  hosts: localhost
+  tasks:
+  - shell: 
+      cmd: /home/ansible/ansible/testscript.sh
+    register: script_output
+    changed_when: "'Success' in script_output.stdout"
+    notify:
+      - restart httpd
+
+  handlers:
+  - name: restart httpd
+    service:
+      name: httpd
+      state: restarted

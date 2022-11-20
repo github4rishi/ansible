@@ -7,9 +7,4 @@
       lv: test
       vg: vgubuntu
       size: 7M
-    register: command_result
-
-  - name: show command result
-    debug:
-      var: command_result
 ...
