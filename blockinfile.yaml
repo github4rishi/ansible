@@ -1,0 +1,27 @@
+---
+- name: copy resolv.conf to rocky group
+  hosts: rocky
+  tasks:
+  - name: copy resolv.conf
+    copy:
+      src: /etc/resolv.conf
+      dest: /tmp/
+  - name: add more nameservers
+    blockinfile:
+      path: /tmp/resolv.conf
+      block: |
+        nameserver 1.1.1.1
+        nameserver 2.2.2.2
+      state: present
+  - name: verify the checksum
+    stat:
+      path: /tmp/hosts
+      checksum_algorithm: md5
+    register: result
+  - debug:
+      msg: "The checksum of /tmp/hosts is {{ result.stat.checksum }}"
+  - name: fetch resolv.conf files
+    fetch:
+      src: /tmp/resolv.conf
+      dest: /tmp/
+... 
