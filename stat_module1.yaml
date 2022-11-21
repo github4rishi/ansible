@@ -1,0 +1,12 @@
+---
+- name: Examine all stat output of /etc/passwd
+  hosts: rocky
+  tasks:
+  - name: stat /etc/passwd
+    stat:
+      path: /etc/passwd
+    register: results
+
+  - name: Display stat results
+    debug:
+      var: results

@@ -1,0 +1,13 @@
+---
+- name: Verify the checksum of a file
+  hosts: rocky
+  tasks:
+  - name: checksum
+    stat:
+      path: /etc/hosts
+      checksum_algorithm: md5
+    register: result
+
+  - debug:
+      msg: "The checksume of the file is {{ result.stat.checksum }}"
+
