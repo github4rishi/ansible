@@ -1,0 +1,18 @@
+---
+- name: synchorize local file to remote 
+  hosts: rocky
+  tasks:
+  - name: sync control dir to managed hosts
+    synchronize:
+      src: /tmp/sync
+      dest: /tmp/
+
+  - name: sync hosts file
+    synchronize:
+      src: /etc/hosts
+      dest: /var/tmp/
+
+  - name: status of sync files
+    debug:
+      msg: "All files sync successfully"
+...
