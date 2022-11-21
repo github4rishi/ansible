@@ -1,0 +1,11 @@
+- name: using the copy module
+  hosts: rocky
+  tasks:
+  - name: copy users.txt file to all managed hosts
+    copy:
+      src: users.txt
+      dest: /tmp
+      owner: rishikap
+      group: rishikap
+      mode: 0644
+      setype: samba_share_t
