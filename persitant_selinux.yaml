@@ -1,0 +1,10 @@
+---
+- name: SELinux type is persistently set to samba_share_t
+  hosts: rocky
+  tasks:
+  - name: SELinux type set persistently 
+    sefcontext: 
+      target: /tmp/foo1.txt
+      setype: samba_share_t
+      state: present
+...

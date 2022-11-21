@@ -1,0 +1,13 @@
+---
+- name: create users
+  hosts: rocky
+  vars_files:
+    - vars/users.yaml
+  tasks:
+  - name: create users 
+    user:
+      name: "{{ item.username }}"
+      state: present
+      generate_ssh_key: yes
+    loop: "{{ users }}"
+    

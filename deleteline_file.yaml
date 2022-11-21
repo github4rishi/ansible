@@ -1,0 +1,9 @@
+---
+- name: delete extra nameservers
+  hosts: rocky
+  tasks:
+  - name: delete nameservers not needed
+    lineinfile:
+      path: /etc/resolv.conf
+      line: 'nameserver 2.2.2.2'
+      state: absent

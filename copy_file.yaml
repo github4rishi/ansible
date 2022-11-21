@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 - name: using the copy module
   hosts: rocky
   tasks:
@@ -5,7 +6,21 @@
     copy:
       src: users.txt
       dest: /tmp
+=======
+---
+- name: Using the copy module
+  hosts: rocky
+  tasks:
+  - name: copy users.txt 
+    copy:
+      src: users.txt
+      dest: /tmp/users.txt
+>>>>>>> copy
       owner: rishikap
       group: rishikap
       mode: 0644
       setype: samba_share_t
+<<<<<<< HEAD
+=======
+...
+>>>>>>> copy
