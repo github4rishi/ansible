@@ -4,6 +4,7 @@
   tasks:
   - name: delete last two dns 
     blockinfile:
+      marker: "<##-- {mark} Adding nameservers -->"
       path: /etc/resolv.conf
       block: |
         nameserver: 10.10.10.10

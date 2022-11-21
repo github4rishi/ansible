@@ -5,6 +5,7 @@
     - name: add two dns entries
       blockinfile:
         path: /etc/resolv.conf
+        marker: "<##-- {mark} Adding nameservers -->"
         block: |
           nameserver 10.10.10.10
           nameserver 11.11.11.11
