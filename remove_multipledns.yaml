@@ -1,0 +1,11 @@
+---
+- name: remove multiple dns entries
+  hosts: rocky
+  tasks:
+  - name: delete last two dns 
+    blockinfile:
+      path: /etc/resolv.conf
+      block: |
+        nameserver: 10.10.10.10
+        nameserver: 11.11.11.11
+      state: absent

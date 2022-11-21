@@ -1,0 +1,24 @@
+---
+- name: Retrieve SSH key from the managed hosts
+  hosts: rocky
+  vars_files:
+      - vars/users.yaml
+  tasks:
+  - name: create users
+    user:
+      name: "{{ item }}"
+      state: present
+      generate_ssh_key: yes
+    loop: "{{ users }}"
+    when: ansible_facts['distribution'] == "Rocky"
+
+  - name: get ssh pub key
+    fetch:
+      src: "/home/{{ item }}/.ssh/id_rsa.pub"
+      dest: "files/keys/{{ item }}.pub" 
+    loop: "{{ users }}"
+    when: ansible_facts['distribution'] == "Rocky"
+
+  - name: keys retrieved
+    debug:
+      msg: task completed successfully

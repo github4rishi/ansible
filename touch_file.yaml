@@ -1,0 +1,12 @@
+---
+- name: Touch a file and set permissions
+  hosts: rocky
+  tasks:
+  - name: Touch a file and set permissions
+    file:
+      path: /tmp/foo1.txt
+      owner: rishikap
+      group: wheel
+      mode: 0640
+      state: touch
+      setype: samba_share_t

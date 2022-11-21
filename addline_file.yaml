@@ -1,0 +1,9 @@
+---
+- name: add more nameserver
+  hosts: rocky
+  tasks:
+  - name: add nameserver
+    lineinfile:
+      path: /etc/resolv.conf
+      line: 'nameserver 2.2.2.2'
+      state: present

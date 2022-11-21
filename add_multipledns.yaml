@@ -1,0 +1,11 @@
+---
+- name: add multiple dns entries
+  hosts: rocky
+  tasks:
+    - name: add two dns entries
+      blockinfile:
+        path: /etc/resolv.conf
+        block: |
+          nameserver 10.10.10.10
+          nameserver 11.11.11.11
+        backup: yes
