@@ -1,0 +1,9 @@
+---
+- name: Retrieve secure file from the managed host
+  hosts: all
+  tasks:
+  - name: Retreive /var/log/secure file
+    fetch:
+      src: /var/log/secure
+      dest: secure-backups
+...

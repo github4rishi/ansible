@@ -1,0 +1,26 @@
+Nov 20 22:24:18 tower sshd[23838]: Accepted publickey for ansible from 192.168.1.106 port 35368 ssh2: RSA SHA256:T0BR6EdP75gCExDdIoqX+mD87FzRG16IvxwzHlOErr4
+Nov 20 22:24:18 tower sshd[23838]: pam_unix(sshd:session): session opened for user ansible by (uid=0)
+Nov 20 22:24:19 tower sudo[23955]: ansible : TTY=pts/0 ; PWD=/home/ansible ; USER=root ; COMMAND=/bin/sh -c echo BECOME-SUCCESS-abohajhwvbpmxyczjeyecbicmddntyrq ; /usr/bin/python /home/ansible/.ansible/tmp/ansible-tmp-1668963258.2571573-35625-36503864306445/AnsiballZ_command.py
+Nov 20 22:24:19 tower sudo[23955]: pam_unix(sudo:session): session opened for user root by ansible(uid=0)
+Nov 20 22:24:20 tower polkitd[843]: Registered Authentication Agent for unix-process:23962:5164669 (system bus name :1.226 [/usr/bin/pkttyagent --notify-fd 5 --fallback], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8)
+Nov 20 22:24:20 tower sudo[23955]: pam_unix(sudo:session): session closed for user root
+Nov 20 22:24:20 tower sshd[23838]: pam_unix(sshd:session): session closed for user ansible
+Nov 21 07:17:49 tower polkitd[848]: Loading rules from directory /etc/polkit-1/rules.d
+Nov 21 07:17:49 tower polkitd[848]: Loading rules from directory /usr/share/polkit-1/rules.d
+Nov 21 07:17:49 tower polkitd[848]: Finished loading, compiling and executing 10 rules
+Nov 21 07:17:49 tower polkitd[848]: Acquired the name org.freedesktop.PolicyKit1 on the system bus
+Nov 21 07:17:50 tower sshd[1157]: Server listening on 0.0.0.0 port 22.
+Nov 21 07:17:50 tower sshd[1157]: Server listening on :: port 22.
+Nov 22 15:46:52 tower polkitd[840]: Loading rules from directory /etc/polkit-1/rules.d
+Nov 22 15:46:52 tower polkitd[840]: Loading rules from directory /usr/share/polkit-1/rules.d
+Nov 22 15:46:52 tower polkitd[840]: Finished loading, compiling and executing 10 rules
+Nov 22 15:46:52 tower polkitd[840]: Acquired the name org.freedesktop.PolicyKit1 on the system bus
+Nov 22 15:46:54 tower sshd[1149]: Server listening on 0.0.0.0 port 22.
+Nov 22 15:46:54 tower sshd[1149]: Server listening on :: port 22.
+Nov 22 15:55:37 tower sshd[1878]: Accepted publickey for ansible from 192.168.1.106 port 55832 ssh2: RSA SHA256:T0BR6EdP75gCExDdIoqX+mD87FzRG16IvxwzHlOErr4
+Nov 22 15:55:37 tower sshd[1878]: pam_unix(sshd:session): session opened for user ansible by (uid=0)
+Nov 22 15:55:40 tower sudo[1993]: ansible : TTY=pts/0 ; PWD=/home/ansible ; USER=root ; COMMAND=/bin/sh -c echo BECOME-SUCCESS-lrmptliwmubqpkdscwnoxbllhgkbnwfj ; /usr/bin/python /home/ansible/.ansible/tmp/ansible-tmp-1669112737.340281-4287-15590710504621/AnsiballZ_setup.py
+Nov 22 15:55:40 tower sudo[1993]: pam_unix(sudo:session): session opened for user root by ansible(uid=0)
+Nov 22 15:55:42 tower sudo[1993]: pam_unix(sudo:session): session closed for user root
+Nov 22 15:55:46 tower sudo[2146]: ansible : TTY=pts/0 ; PWD=/home/ansible ; USER=root ; COMMAND=/bin/sh -c echo BECOME-SUCCESS-dszhohrjcggyejtjpctqnridcovyyhjl ; /usr/bin/python /home/ansible/.ansible/tmp/ansible-tmp-1669112745.4532447-4369-88930967941423/AnsiballZ_slurp.py
+Nov 22 15:55:46 tower sudo[2146]: pam_unix(sudo:session): session opened for user root by ansible(uid=0)

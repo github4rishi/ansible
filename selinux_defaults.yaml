@@ -1,13 +1,11 @@
 ---
 - name: Using the file module to ensure SELinux file context
   hosts: rocky
-  remote_user: root
   tasks:
   - name: SELinux file context is set to defaults 
     file:
-      path: /tmp/users.txt
+      path: /var/tmp/users.txt
       seuser: _default
       serole: _default
       setype: _default
       selevel: _default
-...

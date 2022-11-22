@@ -1,26 +1,12 @@
-<<<<<<< HEAD
-- name: using the copy module
-  hosts: rocky
-  tasks:
-  - name: copy users.txt file to all managed hosts
-    copy:
-      src: users.txt
-      dest: /tmp
-=======
 ---
 - name: Using the copy module
   hosts: rocky
   tasks:
-  - name: copy users.txt 
+  - name: copy users.txt
     copy:
-      src: users.txt
-      dest: /tmp/users.txt
->>>>>>> copy
+      src: /home/ansible/file-manage/files/users.txt
+      dest: /var/tmp/
       owner: rishikap
-      group: rishikap
+      group: wheel
       mode: 0644
       setype: samba_share_t
-<<<<<<< HEAD
-=======
-...
->>>>>>> copy

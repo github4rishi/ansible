@@ -1,0 +1,19 @@
+Nov 21 20:15:16 centos polkitd[853]: Loading rules from directory /etc/polkit-1/rules.d
+Nov 21 20:15:16 centos polkitd[853]: Loading rules from directory /usr/share/polkit-1/rules.d
+Nov 21 20:15:16 centos polkitd[853]: Finished loading, compiling and executing 2 rules
+Nov 21 20:15:16 centos polkitd[853]: Acquired the name org.freedesktop.PolicyKit1 on the system bus
+Nov 21 20:15:20 centos sshd[1264]: Server listening on 0.0.0.0 port 22.
+Nov 21 20:15:20 centos sshd[1264]: Server listening on :: port 22.
+Nov 22 15:46:36 centos polkitd[849]: Loading rules from directory /etc/polkit-1/rules.d
+Nov 22 15:46:36 centos polkitd[849]: Loading rules from directory /usr/share/polkit-1/rules.d
+Nov 22 15:46:36 centos polkitd[849]: Finished loading, compiling and executing 2 rules
+Nov 22 15:46:36 centos polkitd[849]: Acquired the name org.freedesktop.PolicyKit1 on the system bus
+Nov 22 15:47:05 centos sshd[1270]: Server listening on 0.0.0.0 port 22.
+Nov 22 15:47:05 centos sshd[1270]: Server listening on :: port 22.
+Nov 22 15:55:37 centos sshd[1545]: Accepted publickey for ansible from 192.168.1.106 port 48274 ssh2: RSA SHA256:T0BR6EdP75gCExDdIoqX+mD87FzRG16IvxwzHlOErr4
+Nov 22 15:55:38 centos sshd[1545]: pam_unix(sshd:session): session opened for user ansible by (uid=0)
+Nov 22 15:55:40 centos sudo: ansible : TTY=pts/0 ; PWD=/home/ansible ; USER=root ; COMMAND=/bin/sh -c echo BECOME-SUCCESS-oujbrbcftaewbxturaffcwjinnsnqcam ; /usr/bin/python /home/ansible/.ansible/tmp/ansible-tmp-1669112738.68507-4290-181195843428925/AnsiballZ_setup.py
+Nov 22 15:55:40 centos sudo: pam_unix(sudo:session): session opened for user root by ansible(uid=0)
+Nov 22 15:55:42 centos sudo: pam_unix(sudo:session): session closed for user root
+Nov 22 15:55:46 centos sudo: ansible : TTY=pts/0 ; PWD=/home/ansible ; USER=root ; COMMAND=/bin/sh -c echo BECOME-SUCCESS-ghrjzmywcceijbjgopwforcqafxsbhxu ; /usr/bin/python /home/ansible/.ansible/tmp/ansible-tmp-1669112745.5504053-4374-193005064009861/AnsiballZ_slurp.py
+Nov 22 15:55:46 centos sudo: pam_unix(sudo:session): session opened for user root by ansible(uid=0)
