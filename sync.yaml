@@ -1,6 +1,6 @@
 ---
 - name: sync directories 
-  hosts: rocky
+  hosts: all
   tasks:
   - name: sync directories
     synchronize:
