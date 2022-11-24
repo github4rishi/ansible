@@ -1,0 +1,11 @@
+---
+- name: sync directories 
+  hosts: rocky
+  tasks:
+  - name: sync directories
+    synchronize:
+      src: /var/tmp/log
+      dest: /tmp/
+  - debug:
+      msg: directories synced successfully
+...
