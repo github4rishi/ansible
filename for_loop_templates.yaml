@@ -1,0 +1,8 @@
+---
+- name: for loop demo
+  hosts: rocky
+  tasks:
+  - name: template and for loop
+    template:
+      src: forloop.j2
+      dest: /tmp/loopconstruct

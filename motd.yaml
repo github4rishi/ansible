@@ -1,7 +1,7 @@
 ---
 - name: install motd
   hosts: rocky
-  tasks:
+  tasks:  
   - name: install motd
     template:
       src: motd.j2

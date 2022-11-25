@@ -1,0 +1,8 @@
+---
+- name: magic variables demo
+  hosts: localhost
+  gather_facts: True
+  tasks:
+  - name: magic variables
+    debug:
+      var: groups
