@@ -1,0 +1,4 @@
+{{ ansible_managed }}
+{% for host in groups['linux'] %}
+{{ host }}
+{% endfor %}

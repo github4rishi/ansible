@@ -1,0 +1,8 @@
+---
+- name: print hosts from the inventory group
+  hosts: rocky
+  tasks:
+  - name: print linux group hosts
+    template:
+      src: print_hosts.j2
+      dest: /tmp/linux
