@@ -1,5 +1,5 @@
 ---
-- name: add banner to all rocky hosts
+- name: add banners to all rocky hosts
   hosts: rocky
   tasks:
   - name: add banner to rocky hosts
