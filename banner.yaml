@@ -10,7 +10,7 @@
       group: root
       mode: '644'
 
-- name: add banner to all ubuntu hosts
+- name: add banners to all ubuntu hosts
   hosts: ubuntu
   tasks:
   - name: add banner to ubuntu hosts
