@@ -13,7 +13,7 @@
 - name: add banners to all ubuntu hosts
   hosts: ubuntu
   tasks:
-  - name: add banner to ubuntu hosts
+  - name: add banners to ubuntu hosts
     copy:
       src: motd-ubuntu
       dest: /etc/motd
