@@ -1,8 +1,8 @@
 ---
-- name: add banners to all rocky hosts
+- name: add banner to all rocky hosts
   hosts: rocky
   tasks:
-  - name: add banners to rocky hosts
+  - name: add banner to rocky hosts
     copy:
       src: motd-rocky
       dest: /etc/motd
@@ -10,10 +10,10 @@
       group: root
       mode: '644'
 
-- name: add banners to all ubuntu hosts
+- name: add banner to all ubuntu hosts
   hosts: ubuntu
   tasks:
-  - name: add banners to ubuntu hosts
+  - name: add banner to ubuntu hosts
     copy:
       src: motd-ubuntu
       dest: /etc/motd
