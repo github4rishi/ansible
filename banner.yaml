@@ -2,7 +2,7 @@
 - name: add banners to all rocky hosts
   hosts: rocky
   tasks:
-  - name: add banner to rocky hosts
+  - name: add banners to rocky hosts
     copy:
       src: motd-rocky
       dest: /etc/motd
